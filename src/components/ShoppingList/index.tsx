@@ -8,22 +8,24 @@ import { Product, ProductProps } from '../Product';
 export function ShoppingList() {
 	const [products, setProducts] = useState<ProductProps[]>([]);
 
-	useEffect(() => {
-		firestore()
-			.collection('products')
-			.get()
-			.then((response) => {
-				const data = response.docs.map((doc) => {
-					return {
-						id: doc.id,
-						...doc.data(),
-					};
-				}) as ProductProps[];
-				setProducts(data);
-			})
-			.catch((error) => console.error(error));
-	}, []);
+	// *** RECUPERAR DADOS DE UMA COLEÇÃO *** //
+	// useEffect(() => {
+	// 	firestore()
+	// 		.collection('products')
+	// 		.get()
+	// 		.then((response) => {
+	// 			const data = response.docs.map((doc) => {
+	// 				return {
+	// 					id: doc.id,
+	// 					...doc.data(),
+	// 				};
+	// 			}) as ProductProps[];
+	// 			setProducts(data);
+	// 		})
+	// 		.catch((error) => console.error(error));
+	// }, []);
 
+	// *** RECUPERAR DADOS DE UM DOCUMENTO ESPECÍFICO *** //
 	// useEffect(() => {
 	// 	firestore()
 	// 		.collection('products')
@@ -31,6 +33,22 @@ export function ShoppingList() {
 	// 		.get()
 	// 		.then((response) => console.log({ id: response.id, ...response.data() }));
 	// }, []);
+
+	// *** RECUPERAR DADOS EM TEMPO REAL *** //
+	useEffect(() => {
+		const subscribe = firestore()
+			.collection('products')
+			.onSnapshot((querySnapshot) => {
+				const data = querySnapshot.docs.map((doc) => {
+					return {
+						id: doc.id,
+						...doc.data(),
+					};
+				}) as ProductProps[];
+				setProducts(data);
+			});
+		return () => subscribe();
+	}, []);
 
 	return (
 		<FlatList
