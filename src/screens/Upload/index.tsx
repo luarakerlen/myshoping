@@ -48,7 +48,8 @@ export function Upload() {
 			);
 		});
 
-		uploadTask.then(() => {
+		uploadTask.then(async() => {
+			const imageUrl = await reference.getDownloadURL(); //obter a url da imagem e salvar no banco pra listar as imagens
 			Alert.alert('Sucesso!', 'Upload concluído com sucesso.');
 		});
 	}
