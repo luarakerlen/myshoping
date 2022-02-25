@@ -78,7 +78,7 @@ export function SignIn() {
 	return (
 		<Container>
 			<Title>MyShopping</Title>
-			<Subtitle>monte sua lista de compra te ajudar nas compras</Subtitle>
+			<Subtitle>monte sua lista de compras pra facilitar seu dia a dia</Subtitle>
 
 			<Input
 				placeholder='e-mail'
