@@ -40,30 +40,40 @@ export function SignIn() {
 			});
 	}
 
-  function handleSignInWithEmailAndPassword() {
-    auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(({ user }) => {
-        console.log(user);
-      })
-      .catch((error) => {
-        switch (error.code) {
-          case 'auth/invalid-email':
-            Alert.alert('E-mail inválido!');
-            break;
-          case 'auth/user-not-found':
-            Alert.alert('Usuário não encontrado!');
-            break;
-          case 'auth/wrong-password':
-            Alert.alert('Senha incorreta!');
-            break;
+	function handleSignInWithEmailAndPassword() {
+		auth()
+			.signInWithEmailAndPassword(email, password)
+			.then(({ user }) => {
+				console.log(user);
+			})
+			.catch((error) => {
+				switch (error.code) {
+					case 'auth/invalid-email':
+						Alert.alert('E-mail inválido!');
+						break;
+					case 'auth/user-not-found':
+						Alert.alert('Usuário não encontrado!');
+						break;
+					case 'auth/wrong-password':
+						Alert.alert('Senha incorreta!');
+						break;
 
-          default:
-            Alert.alert('Erro ao logar!');
-            break;
-        }
-      });
-  }
+					default:
+						Alert.alert('Erro ao logar!');
+						break;
+				}
+			});
+	}
+
+	function handleForgotPassword() {
+		auth()
+			.sendPasswordResetEmail(email)
+			.then(() =>
+				Alert.alert(
+					'Enviamos um link no seu e-mail para você redefinir a sua senha'
+				)
+			);
+	}
 
 	return (
 		<Container>
@@ -73,6 +83,7 @@ export function SignIn() {
 			<Input
 				placeholder='e-mail'
 				keyboardType='email-address'
+				autoCapitalize='none'
 				onChangeText={setEmail}
 			/>
 
@@ -89,7 +100,7 @@ export function SignIn() {
 			/>
 
 			<Account>
-				<ButtonText title='Recuperar senha' onPress={() => {}} />
+				<ButtonText title='Recuperar senha' onPress={handleForgotPassword} />
 				<ButtonText
 					title='Criar minha conta'
 					onPress={handleCreateUserAccount}
