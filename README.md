@@ -3,7 +3,7 @@ Projeto desenvolvido durante parte do curso de React Native da Rocketseat.
 
 <p>
   <img src="https://img.shields.io/static/v1?label=year&message=2022&color=FFFFFF&labelColor=7273E9" alt="Year" />
-  <img src="https://img.shields.io/github/stars/luarakerlen/nlw-together?label=stars&message=MIT&color=FFFFFF&labelColor=7273E9" alt="Stars">
+  <img src="https://img.shields.io/github/stars/luarakerlen/myshoping?label=stars&message=MIT&color=FFFFFF&labelColor=7273E9" alt="Stars">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=FFFFFF&labelColor=7273E9">
 </p>
 
