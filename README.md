@@ -1,4 +1,4 @@
-# MyShoping App
+# MyShopping App
 Projeto desenvolvido durante parte do curso de React Native da Rocketseat.
 
 <p>
