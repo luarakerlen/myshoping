@@ -36,7 +36,10 @@ Login | Produtos | Upload de comprovantes | Comprovantes
 -   [x] Exibe a lista de comprovantes upados;
 -   [x] Permite visualizar cada comprovante já upado;
 -   [x] Permite excluir comprovantes upados;
--   [x] Disponibiliza a função de Logout.
+-   [x] Disponibiliza a função de Logout;
+-   [ ] Permite classificar os produtos por categoria;
+-   [ ] Permite filtrar os produtos por categoria;
+-   [ ] Permite colocar valor dos produtos em cada supermercado.
 
 ## 🧪 Tecnologias
 
