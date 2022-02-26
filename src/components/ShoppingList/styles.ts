@@ -7,5 +7,10 @@ export const styles = StyleSheet.create({
   },
   content: {
     paddingBottom: 100
-  }
+  },
+  buttonContainer: {
+    marginHorizontal: 24,
+    marginBottom: 16,
+    marginTop: 4
+  },
 });

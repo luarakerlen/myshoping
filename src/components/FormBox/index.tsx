@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Alert } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 
 import { Container } from './styles';
@@ -22,7 +21,6 @@ export function FormBox() {
 			.then(() => {
 				setDescription('');
 				setQuantity(0);
-				Alert.alert('Produto adicionado com sucesso');
 			})
 			.catch((error) => console.error(error));
 	}
