@@ -12,6 +12,9 @@ Aplicativo para lhe ajudar a organizar a lista de compras. Adicione os produtos 
 
 Este é um projeto desenvolvido como parte do curso Ignite, da **[Rocketseat](https://www.rocketseat.com.br/)**.
 
+## Capítulos do Ignite:
+- Conteúdo extra: Fundamentos do Firebase no React Native
+
 ## 📱 Telas
 
 Login | Produtos | Upload de comprovantes | Comprovantes
